@@ -22,7 +22,6 @@ My Approach
    
 AI Tools Used
 I used AI tools to increase development speed and solve complex or repetitive coding tasks:
-
 ChatGPT
 - Helped write clean and correct logic for backend middleware (e.g., JWT auth).
  - Debugged errors like "invalid signature" in JWTs.
@@ -34,26 +33,29 @@ Prerequisites
 - Node.js and npm installed
  - MySQL server running locally
  - Git
+   
 1. Clone the Repository
 git clone https://github.com/<your-username>/<repo-name>.git
  cd <repo-name>
  
 2. Backend Setup
 cd backend
- npm install
+npm install
 
-Create `.env` file:
-DB_HOST=localhost
- DB_USER=root
- DB_PASSWORD=root
- DB_NAME=blog_app
- JWT_SECRET=your_jwt_secret
+db.js
+const mysql = require('mysql2');
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root', // Use your own MySQL password
+  database: 'blog_app'
+});
+module.exports = db;
 
-Run Server:node index.js
+node index.js
 
 3. Frontend Setup
 cd ../frontend
- npm install
- npm start
-open http://localhost:3000 in your browser 
+npm install
+Start the frontend React app:npm start
 
