@@ -39,6 +39,7 @@ git clone https://github.com/<your-username>/<repo-name>.git
  cd <repo-name>
  
 2. Backend Setup
+
 cd backend
 npm install
 
@@ -55,7 +56,10 @@ module.exports = db;
 node index.js
 
 3. Frontend Setup
+   
 cd ../frontend
+
 npm install
+
 Start the frontend React app:npm start
 
