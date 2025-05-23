@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -26,6 +27,8 @@ router.post('/login', async (req, res) => {
     var match = false; 
     if(password === user.password){
       match = true;
+    }else{
+      match = await bcrypt.compare(password, user.password);
     };
     if (!match) return res.status(401).json({ error: "Invalid credentials" });
 
